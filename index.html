@@ -1,10 +1,9 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 5.01 Transitional//EN">
 <!-- saved from url=(0042)http://iridia.ulb.ac.be/supp/template.html -->
 <html class="gr__iridia_ulb_ac_be"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-<title>Do robot swarms need a blockchain?</title> <!-- <<<<< Remember to change that -->
-<meta name="description" content="Do robot swarms need a blockchain?"> <!-- <<<<< Remember to change that -->
-<meta name="keywords" content="Byzantine robot fault-tolerance;
-    blockchain technology; reputation management system; robot swarms"> <!-- <<<<< Remember to change that -->
+<title>Robot swarms need blockchain technologyL A comparison of consensus protocols and their resilience to Byzantine robots</title> <!-- <<<<< Remember to change that -->
+<meta name="description" content="Robot swarms need blockchain technologyL A comparison of consensus protocols and their resilience to Byzantine robots"> <!-- <<<<< Remember to change that -->
+<meta name="keywords" content="swarm robotics; blockchain technology; Byzantine fault-tolerance; resilient robotics; verifiable robotics"> <!-- <<<<< Remember to change that -->
 <style type="text/css" media="all">
     a { text-decoration:none;} h1 { margin: 12px 60px 20px 40px;
     color: #326fa3; font: 40px 'Lucida Grande', Geneva, Verdana,
@@ -18,19 +17,19 @@
     margin-left: auto; margin-right: auto; margin-bottom: 20px;} p {
     margin: 12px 60px 30px 60px; font: 18px; } ul, table { margin:
     12px 60px 12px 60px; font: 18px;} p.center {text-align: center;
-    font-weight: bold; font: 18px; }
+    font-weight: bold; font: 18px; p + ul {margin-top: -10px;}}
 </style>
 </head>
 
 <body data-gr-c-s-loaded="true">
 <br>
 <h4>Supplementary material for the paper:</h4>
-<h1>Do robot swarms need a blockchain? A study of consensus protocols and their use in swarm robotics</h1>
+<h1>Robot swarms need blockchain technology:<br>
+  A comparison of consensus protocols and their resilience to Byzantine robots</h1>
 <p>
   <font color="#326fa3">
     <a href="http://iridia.ulb.ac.be/~vstrobel" target="_blank">Volker Strobel</a>,
     <a href="http://www.eduardocastello.com/" target="_blank">Eduardo Castello Ferrer</a>,
-    and <a href="https://www.media.mit.edu/people/sandy/overview/" target="_blank">Alex "Sandy" Pentland</a>
     and <a href="http://iridia.ulb.ac.be/~mdorigo" target="_blank">Marco Dorigo</a>
     (October 2019)</font>
 </p>
@@ -52,30 +51,54 @@
 
 <a name="Abstract"></a><h2>Abstract</h2>
 <p>
-  In this work, we demonstrate how a blockchain can be used as shared
-  knowledge medium, computing platform, and reputation management
-  system in robot swarms. We show that a swarm of robots can
-  collectively determine the relative frequency of environmental
-  features via blockchain-based smart contracts (decentralized
-  protocols executed via blockchain technology). Consensus in the
-  swarm is achieved in a fully decentralized way without the need of
-  an external observer. Via the presented reputation management system
-  residing on the blockchain, the impact of malfunctioning robots
-  (Byzantine robots) can be managed. We conducted three experiments
-  using a robot swarm simulator, showing (i) the feasibility of the
-  approach, (ii) the trade-off between blockchain size and accuracy,
-  and (iii) the suitability of the blockchain as a reputation
-  management system.
+Consensus achievement is a crucial capability for robot swarms, for
+example, for path selection, spatial aggregation, or collective
+sensing. However, the presence of malfunctioning and malicious robots
+(Byzantine robots) can make it impossible to achieve consensus using
+classical consensus protocols. In this work, we show how a swarm of
+robots can achieve consensus even in the presence of Byzantine robots
+by exploiting blockchain technology. Bitcoin and later blockchain
+frameworks, such as Ethereum, have revolutionized financial
+transactions. These frameworks are based on decentralized databases
+(blockchains) that can achieve secure consensus in peer-to-peer
+networks. We illustrate our approach in a collective-sensing scenario
+where robots in a swarm are controlled via blockchain-based smart
+contracts (decentralized protocols executed via blockchain technology)
+that serve as ‘meta-controllers’ and we compare it to state-of-the-art
+consensus protocols using a robot swarm simulator. Additionally, we
+show that our blockchain- based approach can prevent attacks where
+robots forge a large number of identities (Sybil attacks).  The
+developed robot-blockchain interface is released as open-source
+software in order to facilitate future research in
+blockchain-controlled robot swarms. Besides increasing security, we
+expect the presented approach to be important for data analysis,
+digital forensics, and robot-to-robot financial transactions in robot
+swarms.
 </p>
 
 <a name="datasets"></a><h2>Statistical data</h2>
-<p><a href="data.zip">Download</a> the statistical data of all runs (CSV format).</p>
-
-<a name="vid"></a><h2>Video example</h2>
-<p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/buDJuHHL5KM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-</p>
-
-
+<p><a href="data_strobel_et_al2019.zip">Download</a> the zip file that contains the raw data of all runs (CSV format).
+We compare the three approaches</p>
+<ul>
+<li>Approach 1: Linear consensus</li>
+<li>Approach 2: W-MSR</li>
+<li>Approach 3: Blockchain,</li>
+</ul>
+<p>in seven experiments<ul>
+<li>Experiment 1: Plain setup</li>
+<li>Experiment 2: Binary (non-random) distribution</li>
+<li>Experiment 3: Threshold</li>
+<li>Experiment 4: Threshold Binary</li>
+<li>Experiment 5: Byzantine</li>
+<li>Experiment 6: Byzantine Binary</li>
+<li>Experiment 7: Sybil attack.</li>
+</ul></p>
+<p>There is one file per experiment and approach. The filename is
+composed of the experiment number, experiment name, and used
+approach:<br>
+<code>&lt;experiment_number&gt;_&lt;experiment_name&gt;_&lt;approach&gt;.csv</code>. For
+example,
+<code>2_Threshold_1.csv</code> corresponds to 'Experiment 2 -
+Byzantine' conducted with the linear consensus protocol.</p>
 
 </body></html>
